@@ -1,13 +1,25 @@
-import React from "react"
-import "./list.css"
+import React, {Component}from 'react';
+import ListItem from "./listIten"
 
-export default function (props) {
-    const listItems = props.listItens.map((number) =>
-  <li>{number}</li>
-);
-    return(
-        <ul className="ul-list">
-                {listItems}
-        </ul>
+
+export default class List extends Component {
+  
+  
+  render() {
+    return (
+      <div>
+          <ListItem 
+           toDo={this.props.toDo} 
+           listItens={this.props.listItens} 
+           removeTask={this.props.removeTask}
+           openUpdateTask={this.props.openUpdateTask}
+           updateTask={this.props.updateTask}
+
+           />
+
+    </div>
     )
+  }
 }
+
+
